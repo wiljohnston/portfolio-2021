@@ -26,8 +26,6 @@ export const wrapRootElement = ({ element }) => {
           <AppProvider>
             <Nav />
 
-            <Header />
-
             {element}
           </AppProvider>
         </CursorProvider>

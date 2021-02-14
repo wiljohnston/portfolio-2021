@@ -1,39 +1,46 @@
 /* eslint-disable react/prop-types */
 
-import React, { useContext } from "react";
-import { Link } from "gatsby";
-import { AppContext } from "~context/AppContext";
+import React, { useState } from "react";
+
+import Scrambler from "./Scrambler";
+import { useInterval } from "~utils/hooks";
 
 const Header = () => {
-  const { menuActive, setMenuActive } = useContext(AppContext);
+  const [scramblingIndex, setscramblingIndex] = useState(0);
 
-  const toggleMenu = () => {
-    setMenuActive(!menuActive);
-  };
+  const scramblings = [
+    "code",
+    "design",
+    "crunch numbers",
+    "live in a van",
+    "run",
+  ];
+
+  useInterval(() => {
+    setscramblingIndex((scramblingIndex + 1) % scramblings.length);
+  }, 5000);
 
   return (
     <header
-      className={`header ${
-        menuActive ? ` menu-active` : ``
-      } transition-transform w-full fixed top-0 right-0 left-0 z-30 py-2`}
+      className={`header w-full h-screen py-8 grid flex-col justify-around`}
     >
-      <nav className="grid">
-        <div className="grid-end-12 flex items-center justify-between">
-          <button
-            type="button"
-            className="header__menu w-5 h-3 relative flex flex-col items-center justify-between"
-            onClick={toggleMenu}
-          >
-            <div className="header__menu__line transition-opacity-transform w-full border-b-2 border-black"></div>
-            <div className="header__menu__line transition-opacity-transform w-full border-b-2 border-black"></div>
-            <div className="header__menu__line transition-opacity-transform w-full border-b-2 border-black"></div>
-          </button>
+      <h1 className="grid-end-11 grid-start-2 animation-appear animation-delay-1 f1">
+        W.
+        <br />
+        Johnston
+      </h1>
 
-          <Link to="/" className="block text-black">
-            <h2 className="b1">Site Name</h2>
-          </Link>
-        </div>
-      </nav>
+      <p className="grid-end-10 grid-start-3 animation-appear animation-delay-2 f3">
+        Things I do:
+        <Scrambler className="ml-8" text={scramblings[scramblingIndex]} />
+      </p>
+
+      <p className="grid-end-10 grid-start-3 animation-appear animation-delay-3 f3">
+        Things I've done:
+        <span className="absolute ml-8" style={{ top: 6 }}>
+          ↯
+        </span>
+      </p>
     </header>
   );
 };

@@ -3,12 +3,10 @@
 
 import React from "react";
 import { graphql } from "gatsby";
-import DummyImage from "~components/DummyImage";
-import Footer from "~components/Footer";
-import ImageCTA from "~components/ImageCTA";
+import Card from "~components/Card";
 import Layout from "~components/Layout";
-import Newsletter from "~components/Newsletter";
 import SEO from "~components/SEO";
+import Header from "~components/Header";
 
 const IndexPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
@@ -22,55 +20,26 @@ const IndexPage = ({ data, location }) => {
         path={location.pathname}
       />
 
-      <Layout className="index-page w-full relative">
-        <DummyImage />
+      <Layout className="index-page w-full relative pb-16 bg-off-white">
+        <Header />
 
-        <section className="grid pt-12 pb-24">
-          <header className="grid-end-10">
-            <h2 className="f2">A branded headline with on-point messaging</h2>
-            <p className="mt-12 mb-16 f5">
-              Digital branding is about finding the balance between
-              forward-thinking and real-time reaction.
-            </p>
-          </header>
+        <ul className="pt-24 w-full grid">
+          {frontmatter.cards.map((details, detailsIndex) => (
+            <Card
+              className={`grid-end-7 grid-start-${
+                detailsIndex % 2 === 0 ? 2 : 5
+              }`}
+              {...details}
+            />
+          ))}
+        </ul>
 
-          <article className="grid-end-6">
-            <h4 className="mb-3 f5">KEY MESSAGING 1</h4>
-            <p className="b1">
-              Just like your business, we see brands as a constant work in
-              progress. Always testing. Always building. Always evolving. Always
-              Beta. Ours is a constant, iterative and collaborative process of
-              research, creation, building, testing, and improving. Investing
-              enough time, energy, love and money to make sure you’re ready to
-              grow.
-            </p>
-          </article>
-
-          <article className="grid-end-6">
-            <h4 className="mb-3 f5">KEY MESSAGING 2</h4>
-            <p className="b1">
-              Just like your business, we see brands as a constant work in
-              progress. Always testing. Always building. Always evolving. Always
-              Beta. Ours is a constant, iterative and collaborative process of
-              research, creation, building, testing, and improving. Investing
-              enough time, energy, love and money to make sure you’re ready to
-              grow.
-            </p>
-          </article>
-        </section>
-
-        <ImageCTA heading="Some Category" subheading="Description copy" />
-        <ImageCTA
-          align="right"
-          heading="Some Category"
-          subheading="Description copy"
-        />
-        <ImageCTA heading="Some Category" subheading="Description copy" />
-
-        <Newsletter />
+        <footer className="grid pt-32 b2">
+          <p className="grid-start-2 grid-end-10 flex justify-end">
+            william.cd.johnston at gmail
+          </p>
+        </footer>
       </Layout>
-
-      <Footer />
     </>
   );
 };
@@ -82,6 +51,24 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        cards {
+          img {
+            childImageSharp {
+              fluid(maxWidth: 1280, quality: 75) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+          boldCaption
+          italicCaption
+          didList {
+            item
+          }
+          learnedList {
+            item
+          }
+          bigTitle
+        }
         seoDescription
         seoKeywords
       }

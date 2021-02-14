@@ -16,28 +16,104 @@
 // sans-serif:
 // font-family: "Font Name", Helvetica, Arial, sans-serif;
 
-/*
+// Display
+
 @font-face {
-  font-family: "Font Family";
-  src: url("../assets/fonts/font-name.eot");
-  src: url("../assets/fonts/font-name.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/fonts/font-name.woff") format("woff"),
-    url("../assets/fonts/font-name.ttf") format("truetype"),
-    url("../assets/fonts/font-name.svg#svgFontName") format("svg");
+  font-family: "Argesta Display";
+  src: url("../assets/fonts/ArgestaDisplay-Regular.otf") format("opentype");
   font-display: block;
   font-weight: normal;
   font-style: normal;
 }
 
-.font-family {
-  // Sans:
-  font-family: "Font Family", Helvetica, Arial, sans-serif;
-
-  // Serif:
-  font-family: "Font Family", Times, "Times New Roman", serif;
+@font-face {
+  font-family: "Argesta Display";
+  src: url("../assets/fonts/ArgestaDisplay-RegularItalic.otf")
+    format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: italic;
 }
-*/
+
+@mixin argesta-display {
+  font-family: "Argesta Display", Times, "Times New Roman", serif;
+}
+
+// Hairline
+
+@font-face {
+  font-family: "Argesta Hairline";
+  src: url("../assets/fonts/ArgestaHairline-Regular.otf") format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Argesta Hairline";
+  src: url("../assets/fonts/ArgestaHairline-RegularItalic.otf")
+    format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin argesta-hairline {
+  font-family: "Argesta Hairline", Times, "Times New Roman", serif;
+}
+
+// Headline
+
+@font-face {
+  font-family: "Argesta Headline";
+  src: url("../assets/fonts/ArgestaHeadline-Regular.otf") format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Argesta Headline";
+  src: url("../assets/fonts/ArgestaHeadline-RegularItalic.otf")
+    format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin argesta-headline {
+  font-family: "Argesta Headline", Times, "Times New Roman", serif;
+}
+
+// Text
+
+@font-face {
+  font-family: "Argesta Text";
+  src: url("../assets/fonts/ArgestaText-Regular.otf") format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Argesta Text";
+  src: url("../assets/fonts/ArgestaText-RegularItalic.otf") format("opentype");
+  font-display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Argesta Text";
+  src: url("../assets/fonts/ArgestaText-Bold.otf") format("opentype");
+  font-display: block;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin argesta-text {
+  font-family: "Argesta Text", Times, "Times New Roman", serif;
+}
 
 //
 
@@ -54,17 +130,16 @@ strong,
 //
 
 @mixin f1 {
+  @include argesta-hairline;
+
   @include sm {
-    font-size: 64px;
-    line-height: 70px;
+    font-size: 100px;
   }
 
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-
-  font-size: 90px;
-  line-height: 100px;
-  letter-spacing: -0.02em;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 200px;
+  line-height: 100%;
 }
 
 .f1 {
@@ -74,17 +149,17 @@ strong,
 //
 
 @mixin f2 {
+  @include argesta-hairline;
+
   @include sm {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 36px;
+    line-height: 48px;
   }
 
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-
-  font-size: 70px;
-  line-height: 72px;
-  letter-spacing: -0.02em;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 48px;
+  line-height: 58px;
 }
 
 .f2 {
@@ -94,17 +169,17 @@ strong,
 //
 
 @mixin f3 {
+  @include argesta-headline;
+
   @include sm {
-    font-size: 32px;
-    line-height: 34px;
+    font-size: 28px;
+    line-height: 32px;
   }
 
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-
-  font-size: 44px;
-  line-height: 48px;
-  letter-spacing: -0.02em;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 38px;
 }
 
 .f3 {
@@ -113,99 +188,24 @@ strong,
 
 //
 
-@mixin f4 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 34px;
-  line-height: 40px;
-  letter-spacing: -0.015em;
-}
-
-.f4 {
-  @include f4;
-}
-
-//
-
-@mixin f5 {
-  @include sm {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.01em;
-}
-
-.f5 {
-  @include f5;
-}
-
-//
-
 @mixin b1 {
-  font-family: Helvetica, Arial, sans-serif;
+  @include argesta-text;
 
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .b1 {
   @include b1;
 }
 
-//
-
 @mixin b2 {
-  font-family: Helvetica, Arial, sans-serif;
+  @include argesta-text;
 
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 .b2 {
   @include b2;
-}
-
-//
-
-@mixin b3 {
-  font-family: Times, "Times New Roman", serif;
-
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.b3 {
-  @include b3;
-}
-
-//
-
-@mixin caption {
-  font-family: Helvetica, Arial, sans-serif;
-
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.15em;
-}
-
-.caption {
-  @include caption;
-}
-
-//
-
-@mixin icon-caption {
-  font-family: Helvetica, Arial, sans-serif;
-
-  font-size: 6px;
-  line-height: 8px;
-}
-
-.icon-caption {
-  @include icon-caption;
 }

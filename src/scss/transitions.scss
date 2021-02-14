@@ -15,6 +15,20 @@ $fast-transition: $fast-transition-speed $ease-out-cubic;
   transition: $default-transition background;
 }
 
+.transition-appear {
+  transition: $fast-transition opacity, $fast-transition transform;
+}
+
+.appeared {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.to-appear {
+  opacity: 0;
+  transform: translate3d(0, -5px, 0);
+}
+
 .transition-opacity {
   transition: $default-transition opacity;
 }
