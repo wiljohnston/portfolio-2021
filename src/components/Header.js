@@ -24,18 +24,18 @@ const Header = () => {
     <header
       className={`header w-full h-screen py-8 grid flex-col justify-around`}
     >
-      <h1 className="grid-end-11 grid-start-2 animation-appear animation-delay-1 f1">
+      <h1 className="grid-end-11 sm:grid-end-12 grid-start-2 sm:grid-start-1 animation-appear animation-delay-1 f1">
         W.
         <br />
         Johnston
       </h1>
 
-      <p className="grid-end-10 grid-start-3 animation-appear animation-delay-2 f3">
+      <p className="grid-end-10 sm:grid-end-11 grid-start-3 sm:grid-start-2 animation-appear animation-delay-2 f3">
         Things I do:
         <Scrambler className="ml-8" text={scramblings[scramblingIndex]} />
       </p>
 
-      <p className="grid-end-10 grid-start-3 animation-appear animation-delay-3 f3">
+      <p className="grid-end-10 sm:grid-end-11 grid-start-3 sm:grid-start-2 animation-appear animation-delay-3 f3">
         Things I've done:
         <span className="absolute ml-8" style={{ top: 6 }}>
           ↯

@@ -26,15 +26,24 @@ const IndexPage = ({ data, location }) => {
         <ul className="pt-24 w-full grid">
           {frontmatter.cards.map((details, detailsIndex) => (
             <Card
-              className={`grid-end-7 grid-start-${
+              className={`grid-end-7 xs:grid-end-12 grid-start-${
                 detailsIndex % 2 === 0 ? 2 : 5
-              }`}
+              } xs:grid-start-1 mb-32`}
               {...details}
             />
           ))}
         </ul>
 
         <footer className="grid pt-32 b2">
+          <a
+            href="https://www.linkedin.com/in/wil-j-88b232120/"
+            target="_blank"
+            rel="noreferrer"
+            className="grid-start-2 grid-end-10 flex justify-end mb-2"
+          >
+            linkedin
+          </a>
+
           <p className="grid-start-2 grid-end-10 flex justify-end">
             william.cd.johnston at gmail
           </p>

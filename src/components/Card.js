@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { DocumentContext } from "~context/DocumentContext";
 import Img from "gatsby-image";
 
 const Card = ({
@@ -14,6 +15,8 @@ const Card = ({
 }) => {
   const [hovering, setHovering] = useState(false);
 
+  const { device } = useContext(DocumentContext);
+
   return (
     <div className={`${className} flex-col`}>
       <div
@@ -22,7 +25,7 @@ const Card = ({
         className="w-full relative flex flex-col p-4 mb-4 cursor-pointer border-black"
       >
         <header
-          className={`transition-appear w-full flex justify-end f2 mb-6 ${
+          className={`transition-appear w-full flex justify-end f2 mb-10 text-right ${
             hovering ? "appeared" : "to-appear"
           }`}
         >
@@ -37,12 +40,15 @@ const Card = ({
             className={`transition-appear b1 mb-8 ${
               hovering ? "appeared" : "to-appear"
             }`}
-            style={{ marginLeft: "30%" }}
+            style={{ marginLeft: device === "mobile" ? "10%" : "30%" }}
           >
             <h4 className="mb-2">What I {verb}</h4>
             <ul style={{ listStyle: "disc" }}>
               {list.map(({ item }) => (
-                <li className="ml-10">{`${item}`}</li>
+                <li
+                  dangerouslySetInnerHTML={{ __html: item }}
+                  className="ml-10"
+                />
               ))}
             </ul>
           </div>
