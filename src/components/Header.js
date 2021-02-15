@@ -10,10 +10,13 @@ const Header = () => {
 
   const scramblings = [
     "code",
+    "eat corns chips with hommus",
+    "karaoke",
+    "live in a van",
     "design",
     "crunch numbers",
-    "live in a van",
-    "run",
+    "love juliet",
+    "write song parodies",
   ];
 
   useInterval(() => {
