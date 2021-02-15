@@ -23,7 +23,7 @@ const Header = () => {
 
   useInterval(() => {
     setscramblingIndex((scramblingIndex + 1) % scramblings.length);
-  }, 5000);
+  }, 2500);
 
   return (
     <header
