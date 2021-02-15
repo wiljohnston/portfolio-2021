@@ -90,14 +90,14 @@ module.exports = {
     );
   },
   siteMetadata: {
-    title: `Gatsby Netlify`,
-    titleTemplate: `%s - Gatsby Netlify`,
-    description: `Gatsby // Netlify brochure template`,
-    keywords: `change,these,to,something,else`,
-    author: `danielcourtness@gmail.com`,
-    image: `/images/share.svg`,
+    title: `w johnston`,
+    titleTemplate: `w johnston`,
+    description: `My portfolio and keep-tracker of what I've learned`,
+    keywords: ``,
+    author: `william.cd.johnston@gmail.com`,
+    image: `/images/share.ong`,
     fbAppId: ``,
-    siteUrl: `https://borkify.netlify.app`,
+    siteUrl: `https://wjohnston.dev`,
     twitterUsername: `@twitter`,
   },
   plugins: [
