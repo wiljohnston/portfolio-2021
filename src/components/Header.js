@@ -12,11 +12,13 @@ const Header = () => {
     "code",
     "eat corns chips with hommus",
     "karaoke",
+    "write musicals",
     "live in a van",
     "design",
+    "write robot rock music",
     "crunch numbers",
     "love juliet",
-    "write song parodies",
+    "make song parodies",
   ];
 
   useInterval(() => {
