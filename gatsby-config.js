@@ -1,5 +1,5 @@
 require(`dotenv`).config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
 const autoprefixer = require(`autoprefixer`);
@@ -13,8 +13,8 @@ function trackingPlugins() {
     plugins.push({
       resolve: `gatsby-plugin-bugherd`,
       options: {
-        key: process.env.GATSBY_BUGHERD_ID
-      }
+        key: process.env.GATSBY_BUGHERD_ID,
+      },
     });
   }
 
@@ -24,8 +24,8 @@ function trackingPlugins() {
       options: {
         trackingId: process.env.GATSBY_GA_ID,
         head: true,
-        anonymize: true
-      }
+        anonymize: true,
+      },
     });
   }
 
@@ -36,9 +36,9 @@ function trackingPlugins() {
         id: process.env.GATSBY_GTM_ID,
         includeInDevelopment: true,
         defaultDataLayer: {
-          platform: `gatsby`
-        }
-      }
+          platform: `gatsby`,
+        },
+      },
     });
   }
 
@@ -46,8 +46,8 @@ function trackingPlugins() {
     plugins.push({
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
-        pixelId: process.env.GATSBY_FBPIXEL_ID
-      }
+        pixelId: process.env.GATSBY_FBPIXEL_ID,
+      },
     });
   }
 
@@ -57,8 +57,8 @@ function trackingPlugins() {
       options: {
         prodKey: process.env.GATSBY_SEGMENT_WRITE_KEY,
         devKey: process.env.GATSBY_SEGMENT_WRITE_KEY,
-        trackPage: false
-      }
+        trackPage: false,
+      },
     });
   }
 
@@ -67,8 +67,8 @@ function trackingPlugins() {
       resolve: `gatsby-plugin-hotjar`,
       options: {
         id: process.env.GATSBY_HOTJAR_ID,
-        sv: process.env.GATSBY_HOTJAR_VERSION
-      }
+        sv: process.env.GATSBY_HOTJAR_VERSION,
+      },
     });
   }
 
@@ -78,14 +78,14 @@ function trackingPlugins() {
 //
 
 module.exports = {
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
       `/.netlify/functions/`,
       proxy({
         target: `http://localhost:9000`,
         pathRewrite: {
-          "/.netlify/functions/": ``
-        }
+          "/.netlify/functions/": ``,
+        },
       })
     );
   },
@@ -98,7 +98,7 @@ module.exports = {
     image: `/images/share.svg`,
     fbAppId: ``,
     siteUrl: `https://borkify.netlify.app`,
-    twitterUsername: `@twitter`
+    twitterUsername: `@twitter`,
   },
   plugins: [
     ...trackingPlugins(),
@@ -111,8 +111,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `${__dirname}/src/assets/images/favicon.png`
-      }
+        icon: `${__dirname}/src/assets/images/favicon.png`,
+      },
     },
     // {
     //   resolve: `gatsby-plugin-google-fonts`,
@@ -124,16 +124,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [autoprefixer, tailwindCss]
-      }
+        postCssPlugins: [autoprefixer, tailwindCss],
+      },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
         tailwind: true,
-        whitelistPatterns: [/button-/, /gatsby-/]
-      }
+        whitelistPatterns: [/button-/, /gatsby-/, /grid-start-/],
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-root-import`,
@@ -141,29 +141,29 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/images`,
-        name: `images`
-      }
+        name: `images`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/uploads`,
-        name: `uploads`
-      }
+        name: `uploads`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`
-      }
+        path: `${__dirname}/src/data/`,
+      },
     },
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/`,
-        name: `pages`
-      }
+        name: `pages`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -175,18 +175,18 @@ module.exports = {
             options: {
               maxWidth: 968,
               sizeByPixelDensity: true,
-              withWebp: true
-            }
+              withWebp: true,
+            },
           },
           `gatsby-remark-lazy-load`,
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              destinationDir: `${__dirname}/static`
-            }
-          }
-        ]
-      }
+              destinationDir: `${__dirname}/static`,
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -194,10 +194,10 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-functions`,
       options: {
         functionsSrc: `${__dirname}/src/lambda`,
-        functionsOutput: `${__dirname}/lambda`
-      }
+        functionsOutput: `${__dirname}/lambda`,
+      },
     },
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`
-  ]
+    `gatsby-plugin-netlify`,
+  ],
 };
