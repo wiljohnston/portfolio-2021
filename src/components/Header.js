@@ -12,7 +12,7 @@ const Header = () => {
     "code",
     "eat corns chips with hommus",
     "karaoke",
-    "write musicals",
+    "musical theatre",
     "live in a van",
     "design",
     "write robot rock music",
