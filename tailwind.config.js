@@ -4,6 +4,7 @@ module.exports = {
       white: `#ffffff`,
       "off-white": `#F9F8F6`,
       black: `#000000`,
+      "cool-grey": `#dcdcdc`,
     },
     screens: {
       xs: {

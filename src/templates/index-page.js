@@ -25,18 +25,23 @@ const IndexPage = ({ data, location }) => {
         {/* Modal */}
         {modalContent && (
           <div
-            className={`animation-appear w-screen h-screen sticky top-0 right-0 bottom-0 left-0 z-10 bg-white`}
+            className={`animation-appear w-screen h-screen sticky top-0 right-0 bottom-0 left-0 z-10 bg-cool-grey`}
           >
-            <button
-              type="button"
-              onClick={() => setModalContent(null)}
-              className="absolute top-0 right-0 p-6 f2"
-            >
-              x
-            </button>
+            <div className="w-full h-full pt-3 pb-12 grid">
+              <div className="grid-end-12 relative flex flex-col">
+                <header className="w-full relative flex justify-end">
+                  <button
+                    type="button"
+                    style={{ marginRight: "-32px" }}
+                    onClick={() => setModalContent(null)}
+                    className="pt-2 pl-2 pb-2 f3"
+                  >
+                    x
+                  </button>
+                </header>
 
-            <div className="w-full h-full py-8 grid">
-              <div className="grid-end-12">{modalContent}</div>
+                {modalContent}
+              </div>
             </div>
           </div>
         )}
