@@ -3,6 +3,7 @@
 import React, { useState, useContext } from "react";
 import { DocumentContext } from "~context/DocumentContext";
 import Img from "gatsby-image";
+import Button from "~components/Button";
 
 const Card = ({
   className,
@@ -12,6 +13,7 @@ const Card = ({
   didList,
   learnedList,
   bigTitle,
+  setModalContent,
 }) => {
   const [hovering, setHovering] = useState(false);
 
@@ -54,8 +56,17 @@ const Card = ({
           </div>
         ))}
 
-        <footer className="w-full flex justify-start">
+        <footer className="w-full flex justify-between items-end">
           <Img fluid={img.childImageSharp.fluid} className="mt-6 w-24 h-24" />
+
+          <Button
+            onClick={() => setModalContent(<p>here it is</p>)}
+            className={`transition-appear h-fit-content px-4 py-2 b1 mb-4 ${
+              hovering ? "appeared" : "to-appear"
+            }`}
+          >
+            View Demo
+          </Button>
         </footer>
       </div>
 

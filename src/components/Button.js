@@ -5,21 +5,21 @@ const Button = ({ children, className, color, onClick, transparent }) => {
   return (
     <button
       type="button"
-      className={`button button--${color} ${
+      className={`transition-transform button button--${color} ${
         transparent ? `button--transparent` : ``
       } ${className} relative block`}
       onClick={onClick}
     >
-      {children}
+      <span>{children}</span>
     </button>
   );
 };
 
 Button.defaultProps = {
   className: ``,
-  color: `white`,
+  color: `off-white`,
   onClick: () => {},
-  transparent: false
+  transparent: false,
 };
 
 Button.propTypes = {
@@ -27,7 +27,7 @@ Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,
-  transparent: PropTypes.bool
+  transparent: PropTypes.bool,
 };
 
 export default Button;

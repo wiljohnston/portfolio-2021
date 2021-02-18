@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import { PropTypes } from "prop-types";
 
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Card from "~components/Card";
 import Layout from "~components/Layout";
@@ -10,6 +10,7 @@ import Header from "~components/Header";
 
 const IndexPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
+  const [modalContent, setModalContent] = useState(null);
 
   return (
     <>
@@ -21,6 +22,25 @@ const IndexPage = ({ data, location }) => {
       />
 
       <Layout className="index-page w-full relative pb-16 bg-off-white">
+        {/* Modal */}
+        {modalContent && (
+          <div
+            className={`animation-appear w-screen h-screen sticky top-0 right-0 bottom-0 left-0 z-10 bg-white`}
+          >
+            <button
+              type="button"
+              onClick={() => setModalContent(null)}
+              className="absolute top-0 right-0 p-6 f2"
+            >
+              x
+            </button>
+
+            <div className="w-full h-full py-8 grid">
+              <div className="grid-end-12">{modalContent}</div>
+            </div>
+          </div>
+        )}
+
         <Header />
 
         <ul className="pt-24 w-full grid">
@@ -30,6 +50,7 @@ const IndexPage = ({ data, location }) => {
                 detailsIndex % 2 === 0 ? 2 : 5
               } xs:grid-start-1 mb-32`}
               {...details}
+              setModalContent={setModalContent}
             />
           ))}
         </ul>
