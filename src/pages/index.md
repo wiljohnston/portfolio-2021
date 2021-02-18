@@ -32,7 +32,7 @@ cards:
   - bigTitle: "Love + Money Agency"
     img: /uploads/logo-lam.png
     italicCaption: "Freelance developer + design intern"
-    boldCaption: "March 2020 to December 2020"
+    boldCaption: "March to December, 2020"
     didList:
       - item: "Build beautiful websites"
       - item: "Learned how to design"
@@ -64,4 +64,31 @@ cards:
     learnedList:
       - item: "Adobe AfterEffects"
       - item: "How to freelance"
+  - bigTitle: "Love Bot City"
+    img: /uploads/logo-lovebot.png
+    italicCaption: "Love Bot City – Creative Computing, Prato, Italy"
+    boldCaption: "July 2019"
+    didList:
+      - item: "Travelled to Monash University's Prato, Italy Centre"
+      - item: "Studied the history of innovation, creativity, and technology"
+      - item: "Built the coolest thing I've made yet"
+    learnedList:
+      - item: "Webpack"
+      - item: "Node.js"
+      - item: "Generative art through programming"
+    demoLink: https://kalana.io/city
+  - bigTitle: "Monitor189"
+    img: /uploads/logo-m189.png
+    italicCaption: "Monitor189 – Leave No One Behind program"
+    boldCaption: "July to September, 2019"
+    didList:
+      - item: "Participated in <ahref='https://www.monash.edu/msdi'>MSDI</>'s Leave No One Behind program"
+      - item: "Investigated social issues faced by international students"
+      - item: "Took out the people's choice award with my teams project, <a href='https://monitor189.com'>Monitor189</a>"
+    learnedList:
+      - item: "Identification of root problems"
+      - item: "How to design, build and pitch a solution"
+      - item: "How startups get things done"
+      - item: "How to build a full-stack web app"
+    demoLink: https://monitor189.com/
 ---

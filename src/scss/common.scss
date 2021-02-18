@@ -6,6 +6,11 @@
   height: 50%;
 }
 
+a {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .h-fit-content {
   height: fit-content;
 }

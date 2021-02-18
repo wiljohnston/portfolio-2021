@@ -11,6 +11,7 @@ const Card = ({
   boldCaption,
   italicCaption,
   didList,
+  demoLink,
   learnedList,
   bigTitle,
   setModalContent,
@@ -59,30 +60,31 @@ const Card = ({
         <footer className="w-full flex justify-between items-end">
           <Img fluid={img.childImageSharp.fluid} className="mt-6 w-24 h-24" />
 
-          <Button
-            onClick={() =>
-              setModalContent(
-                <div className="w-full h-full relative">
-                  <article className="absolute w-full h-full top-0 right-0 bottom-0 left-0 flex justify-center items-center">
-                    <p className="animation-appear animation-delay-2 f1">
-                      Loading..
-                    </p>
-                  </article>
+          {demoLink && (
+            <Button
+              onClick={() =>
+                setModalContent(
+                  <div className="w-full h-full relative">
+                    <article className="absolute w-full h-full top-0 right-0 bottom-0 left-0 flex justify-center items-center">
+                      <p className="animation-appear animation-delay-2 f1">
+                        Loading..
+                      </p>
+                    </article>
 
-                  <iframe
-                    className="animation-appear animation-delay-3 w-full h-full absolute top-0 right-0 bottom-0 left-0"
-                    src="https://kalana.io/city"
-                    // src="https://google.com"
-                  ></iframe>
-                </div>
-              )
-            }
-            className={`transition-appear h-fit-content px-4 py-2 b1 mb-4 ${
-              hovering ? "appeared" : "to-appear"
-            }`}
-          >
-            View Demo
-          </Button>
+                    <iframe
+                      className="animation-appear animation-delay-3 w-full h-full absolute top-0 right-0 bottom-0 left-0"
+                      src={demoLink}
+                    ></iframe>
+                  </div>
+                )
+              }
+              className={`transition-appear h-fit-content px-4 py-2 b1 mb-4 ${
+                hovering ? "appeared" : "to-appear"
+              }`}
+            >
+              View Demo
+            </Button>
+          )}
         </footer>
       </div>
 

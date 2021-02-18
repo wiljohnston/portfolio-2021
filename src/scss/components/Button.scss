@@ -52,3 +52,9 @@
     }
   }
 }
+
+.hover-scale {
+  @include hoverable {
+    transform: scale(1.02);
+  }
+}

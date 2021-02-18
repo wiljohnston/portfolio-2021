@@ -21,7 +21,7 @@ const IndexPage = ({ data, location }) => {
         path={location.pathname}
       />
 
-      <Layout className="index-page w-full relative pb-16 bg-off-white">
+      <Layout className="index-page w-full relative bg-off-white">
         {/* Modal */}
         {modalContent && (
           <div
@@ -34,7 +34,7 @@ const IndexPage = ({ data, location }) => {
                     type="button"
                     style={{ marginRight: "-32px" }}
                     onClick={() => setModalContent(null)}
-                    className="pt-2 pl-2 pb-2 f3"
+                    className="hover-scale pt-2 pl-2 pb-2 f3"
                   >
                     x
                   </button>
@@ -60,7 +60,7 @@ const IndexPage = ({ data, location }) => {
           ))}
         </ul>
 
-        <footer className="grid pt-32 b2">
+        <footer className="grid pt-32 pb-16 b2">
           <a
             href="https://www.linkedin.com/in/wil-j-88b232120/"
             target="_blank"
@@ -103,6 +103,7 @@ export const query = graphql`
             item
           }
           bigTitle
+          demoLink
         }
         seoDescription
         seoKeywords
