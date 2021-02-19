@@ -92,7 +92,7 @@ cards:
       - item: "How to build a full-stack web app"
     demoLink: https://monitor189.com/
   - bigTitle: "Robot House Fun-House"
-    img: /uploads/logo-rhfh.png
+    img: /uploads/logo-rhfs.png
     italicCaption: "Band project – Robot House Fun-House"
     boldCaption: "August, 2019"
     didList:
@@ -102,6 +102,6 @@ cards:
     learnedList:
       - item: "Making 3D models with Blender"
       - item: "3D for the web with three.js"
-      - item: "Doing things differently helps"
+      - item: "How important it is to do things differently"
     demoLink: https://wil-portfolio-2019.netlify.app/projects/robothouse-funhouse/
 ---
