@@ -64,6 +64,7 @@ cards:
     learnedList:
       - item: "Adobe AfterEffects"
       - item: "How to freelance"
+    demoLink: https://mudportfolio.com
   - bigTitle: "Love Bot City"
     img: /uploads/logo-lovebot.png
     italicCaption: "Love Bot City – Creative Computing, Prato, Italy"
