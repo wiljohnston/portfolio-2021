@@ -91,4 +91,17 @@ cards:
       - item: "How startups get things done"
       - item: "How to build a full-stack web app"
     demoLink: https://monitor189.com/
+  - bigTitle: "Robot House Fun-House"
+    img: /uploads/logo-rhfh.png
+    italicCaption: "Band project – Robot House Fun-House"
+    boldCaption: "August, 2019"
+    didList:
+      - item: "Built a virtual pitch for our new band, <i>Robot House Time Travel Music</i>"
+      - item: "Send it out to some bookers"
+      - item: "Played some great gigs"
+    learnedList:
+      - item: "Making 3D models with Blender"
+      - item: "3D for the web with three.js"
+      - item: "Doing things differently helps"
+    demoLink: https://wil-portfolio-2019.netlify.app/projects/robothouse-funhouse/
 ---
