@@ -53,18 +53,18 @@ cards:
       - item: "SSH/Linux"
       - item: "SQL databases"
       - item: "PHP"
-  - bigTitle: "MUD"
-    img: /uploads/logo-mud.png
-    italicCaption: "Project support, backend development"
-    boldCaption: "July 2020"
-    didList:
-      - item: "Interviewed the client"
-      - item: "Designed a portfolio (Figma)"
-      - item: "Built that portfolio (Gatsby/Netlify/React)"
-    learnedList:
-      - item: "Adobe AfterEffects"
-      - item: "How to freelance"
-    demoLink: https://mudportfolio.com
+  # - bigTitle: "MUD"
+    # img: /uploads/logo-mud.png
+    # italicCaption: "Project support, backend development"
+    # boldCaption: "July 2020"
+    # didList:
+    #   - item: "Interviewed the client"
+    #   - item: "Designed a portfolio (Figma)"
+    #   - item: "Built that portfolio (Gatsby/Netlify/React)"
+    # learnedList:
+    #   - item: "Adobe AfterEffects"
+    #   - item: "How to freelance"
+    # demoLink: https://mudportfolio.com
   - bigTitle: "Love Bot City"
     img: /uploads/logo-lovebot.png
     italicCaption: "Love Bot City – Creative Computing, Prato, Italy"
@@ -87,7 +87,7 @@ cards:
       - item: "Investigated social issues faced by international students"
       - item: "Took out the people's choice award with my teams project, <a href='https://monitor189.com'>Monitor189</a>"
     learnedList:
-      - item: "Identification of root problems"
+      - item: "How to uncover root problems"
       - item: "How to design, build and pitch a solution"
       - item: "How startups get things done"
       - item: "How to build a full-stack web app"

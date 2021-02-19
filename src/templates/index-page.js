@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 // import { PropTypes } from "prop-types";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { graphql } from "gatsby";
+import { DocumentContext } from "~context/DocumentContext"
 import Card from "~components/Card";
 import Layout from "~components/Layout";
 import SEO from "~components/SEO";
@@ -11,6 +12,7 @@ import Header from "~components/Header";
 const IndexPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   const [modalContent, setModalContent] = useState(null);
+  const { device } = useContext(DocumentContext)
 
   return (
     <>
@@ -25,14 +27,14 @@ const IndexPage = ({ data, location }) => {
         {/* Modal */}
         {modalContent && (
           <div
-            className={`animation-appear w-screen h-screen sticky top-0 right-0 bottom-0 left-0 z-10 bg-cool-grey`}
+            className={`animation-appear w-screen h-screen sticky top-0 right-0 bottom-0 left-0 z-10 overflow-hidden bg-cool-grey`}
           >
             <div className="w-full h-full pt-3 pb-12 grid">
               <div className="grid-end-12 relative flex flex-col">
                 <header className="w-full relative flex justify-end">
                   <button
                     type="button"
-                    style={{ marginRight: "-32px" }}
+                    style={{ marginRight: device === "mobile" ? "0px" : "-32px" }}
                     onClick={() => setModalContent(null)}
                     className="hover-scale pt-2 pl-2 pb-2 f3"
                   >
