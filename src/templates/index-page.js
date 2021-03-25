@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 // import { PropTypes } from "prop-types";
 
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { graphql } from "gatsby";
-import { DocumentContext } from "~context/DocumentContext"
+import { DocumentContext } from "~context/DocumentContext";
 import Card from "~components/Card";
 import Layout from "~components/Layout";
 import SEO from "~components/SEO";
@@ -12,7 +12,21 @@ import Header from "~components/Header";
 const IndexPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark;
   const [modalContent, setModalContent] = useState(null);
-  const { device } = useContext(DocumentContext)
+  const { device } = useContext(DocumentContext);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      const id = window?.location?.hash.replace("#", "");
+      if (id) {
+        const button = document.getElementById(id);
+        console.log(button);
+        if (button) {
+          button.click();
+          console.log("clicked!");
+        }
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -34,7 +48,9 @@ const IndexPage = ({ data, location }) => {
                 <header className="w-full relative flex justify-end">
                   <button
                     type="button"
-                    style={{ marginRight: device === "mobile" ? "0px" : "-32px" }}
+                    style={{
+                      marginRight: device === "mobile" ? "0px" : "-32px",
+                    }}
                     onClick={() => setModalContent(null)}
                     className="hover-scale pt-2 pl-2 pb-2 f3"
                   >

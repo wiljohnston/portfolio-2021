@@ -1,9 +1,10 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-const Button = ({ children, className, color, onClick, transparent }) => {
+const Button = ({ children, className, color, onClick, transparent, ...props }) => {
   return (
     <button
+      {...props}
       type="button"
       className={`transition-transform button button--${color} ${
         transparent ? `button--transparent` : ``

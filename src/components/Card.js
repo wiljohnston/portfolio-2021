@@ -62,6 +62,10 @@ const Card = ({
 
           {demoLink && (
             <Button
+              id={bigTitle
+                .split(" ")
+                .join("-")
+                .toLowerCase()}
               onClick={() =>
                 setModalContent(
                   <div className="w-full h-full relative">
