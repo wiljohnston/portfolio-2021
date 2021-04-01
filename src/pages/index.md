@@ -30,7 +30,7 @@ cards:
       - item: "AT commands"
     italicCaption: "I built a working mobile phone"
     demoLink: https://node-phone.netlify.app/
-    demoMaxWidth: 700
+    demoMaxWidth: 550
   - bigTitle: "9epoch"
     img: /uploads/logo-9e.png
     italicCaption: "Quantitative Researcher"
