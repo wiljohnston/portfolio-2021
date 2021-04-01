@@ -9,7 +9,7 @@ const Header = () => {
   const [scramblingIndex, setscramblingIndex] = useState(0);
 
   const scramblings = [
-    "code",
+    "make things",
     "eat corns chips with hommus",
     "karaoke",
     "musical theatre",
