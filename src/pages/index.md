@@ -17,6 +17,20 @@ cards:
       - item: "Big team git systems"
       - item: "Microsoft Azure"
       - item: "What it's like to work at a huge company"
+  - bigTitle: "Node Phone"
+    img: "/uploads/logo-phone.png"
+    boldCaption: "COVID lockdown project"
+    didList:
+      - item: "Programmed the phone functionality from scratch (Python, Node JS)"
+      - item: "Assembled and configured hardware (Raspberry Pi, 4G module, touch screen)"
+      - item: "Designed and built out a slick front-end (React JS)"
+    learnedList:
+      - item: "Linux programming: network interfaces, device drivers, serial communication"
+      - item: "Socket programming"
+      - item: "AT commands"
+    italicCaption: "I built a working mobile phone"
+    demoLink: https://node-phone.netlify.app/
+    demoMaxWidth: 700
   - bigTitle: "9epoch"
     img: /uploads/logo-9e.png
     italicCaption: "Quantitative Researcher"

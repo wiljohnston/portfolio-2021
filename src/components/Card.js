@@ -15,6 +15,7 @@ const Card = ({
   learnedList,
   bigTitle,
   setModalContent,
+  demoMaxWidth = 'intial'
 }) => {
   const [hovering, setHovering] = useState(false);
 
@@ -70,12 +71,13 @@ const Card = ({
                 setModalContent(
                   <div className="w-full h-full relative">
                     <article className="absolute w-full h-full top-0 right-0 bottom-0 left-0 flex justify-center items-center">
-                      <p className="animation-appear animation-delay-2 f1">
+                      <p className="animation-appear animation-delay-2 f2">
                         Loading..
                       </p>
                     </article>
 
                     <iframe
+                      style={{ margin: `0 auto`, maxWidth: demoMaxWidth }}
                       className="animation-appear animation-delay-3 w-full h-full absolute top-0 right-0 bottom-0 left-0"
                       src={demoLink}
                     ></iframe>

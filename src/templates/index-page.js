@@ -52,7 +52,7 @@ const IndexPage = ({ data, location }) => {
                       marginRight: device === "mobile" ? "0px" : "-32px",
                     }}
                     onClick={() => setModalContent(null)}
-                    className="hover-scale pt-2 pl-2 pb-2 f3"
+                    className="hover-scale pt-2 px-2 pb-2 f3"
                   >
                     x
                   </button>
@@ -122,6 +122,7 @@ export const query = graphql`
           }
           bigTitle
           demoLink
+          demoMaxWidth
         }
         seoDescription
         seoKeywords
