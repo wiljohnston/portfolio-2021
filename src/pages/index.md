@@ -4,6 +4,19 @@ title: ""
 seoDescription: ""
 seoKeywords: ""
 cards:
+  - bigTitle: "Google"
+    img: /uploads/google.png
+    italicCaption: "Customer Engineer Intern, Cloud"
+    boldCaption: "November 2021 to February 2022"
+    didList:
+      - item: "Researched new navigation technology"
+      - item: "Built a novel proof of concept for AR indoor navigation"
+      - item: "Pitched to customers, resulting in concrete leads for cloud"
+    learnedList:
+      - item: "C# + Unity"
+      - item: "How to engineer augmented reality experiences"
+      - item: "How to innovate"
+      - item: "How to sell"
   - bigTitle: "Deloitte Digital"
     img: /uploads/logo-deloitte.png
     italicCaption: "Summer vacationer, front end development"
