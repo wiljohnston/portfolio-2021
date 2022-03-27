@@ -5,7 +5,7 @@ seoDescription: ""
 seoKeywords: ""
 cards:
   - bigTitle: "Google"
-    img: /uploads/google.png
+    img: /uploads/logo-google.png
     italicCaption: "Customer Engineer Intern, Cloud"
     boldCaption: "November 2021 to February 2022"
     didList:
