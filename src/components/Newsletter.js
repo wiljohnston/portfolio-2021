@@ -27,7 +27,7 @@ const Newsletter = () => {
 
   //
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
 
     if (!valid || submitting || submitted) {
@@ -36,13 +36,31 @@ const Newsletter = () => {
 
     setSubmitting(true);
 
-    setTimeout(() => {
+    const request = new Request(
+      "https://<dc>.api.mailchimp.com/3.0/lists/bilby/members",
+      {
+        method: "POST",
+        mode: "no-cors",
+        json: {
+          email_address: formData.email,
+          status: "subscribed",
+        },
+        redirect: "follow",
+        headers: new Headers({
+          "Content-Type": "application/json",
+          Authorization: "Basic apikey",
+        }),
+        auth: {
+          user: "wiljohnston",
+          pass: "",
+        },
+      }
+    );
+
+    fetch(request).then((res) => {
+      console.log(res);
       setSubmitted(true);
-    }, 2000);
-
-    // TODO : add your Mailchimp, Klaviyo...
-
-    return false;
+    });
   };
 
   //
@@ -69,7 +87,7 @@ const Newsletter = () => {
         <div className="grid-end-5 xs:grid-end-12 flex flex-col">
           <input
             className="w-full h-12 relative block mt-2 px-2 border-black bg-white b1 text-black"
-            onChange={e => {
+            onChange={(e) => {
               setInteracted(true);
               setFormData({ ...formData, name: e.target.value });
             }}
@@ -79,7 +97,7 @@ const Newsletter = () => {
 
           <input
             className="w-full h-12 relative block mt-2 px-2 border-black bg-white b1 text-black"
-            onChange={e => {
+            onChange={(e) => {
               setInteracted(true);
               setFormData({ ...formData, email: e.target.value });
             }}

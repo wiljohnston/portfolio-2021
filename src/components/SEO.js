@@ -26,7 +26,7 @@ const SEO = ({
   customKeywords,
   customTitle,
   noIndex,
-  path
+  path,
 }) => {
   return (
     <StaticQuery
@@ -41,9 +41,9 @@ const SEO = ({
             siteUrl,
             title,
             titleTemplate,
-            twitterUsername
-          }
-        }
+            twitterUsername,
+          },
+        },
       }) => {
         const seo = {
           description: customDescription || description,
@@ -51,11 +51,28 @@ const SEO = ({
           keywords: customKeywords || keywords,
           image: `${siteUrl}${image}`,
           title: customTitle || title,
-          url: `${siteUrl}/${path || ``}`
+          url: `${siteUrl}/${path || ``}`,
         };
 
         return (
-          <Helmet title={seo.title} titleTemplate={titleTemplate}>
+          <Helmet
+            title={seo.title}
+            titleTemplate={titleTemplate}
+            script={[
+              {
+                id: "mcjs",
+                innerHtml: `
+                !function(c,h,i,m,p){
+                    ((m = c.createElement(h)),
+                    (p = c.getElementsByTagName(h)[0]),
+                    (m.async = 1),
+                    (m.src = i),
+                    p.parentNode.insertBefore(m, p))
+                  }
+                (document,"script","https://chimpstatic.com/mcjs-connected/js/users/1bec26ea3af323db1b1ef758b/ee276fb4bcc6fb872acc5a60c.js");`,
+              },
+            ]}
+          >
             {noIndex && <meta name="robots" content="noindex" />}
 
             <html lang="en" />
@@ -95,7 +112,7 @@ SEO.defaultProps = {
   customKeywords: null,
   customTitle: null,
   noIndex: false,
-  path: null
+  path: null,
 };
 
 SEO.propTypes = {
@@ -103,7 +120,7 @@ SEO.propTypes = {
   customKeywords: PropTypes.string,
   customTitle: PropTypes.string,
   noIndex: PropTypes.bool,
-  path: PropTypes.string
+  path: PropTypes.string,
 };
 
 export default SEO;

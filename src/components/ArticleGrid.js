@@ -24,7 +24,7 @@ const ArticleGrid = ({ articles, heading, max }) => {
               return (
                 <li
                   key={key}
-                  className="grid-end-4 xs:grid-end-12 relative block"
+                  className="grid-end-4 xs:grid-end-12 relative block b1"
                 >
                   <Link to={article.fields.slug}>
                     <figure className="square border">
@@ -49,13 +49,13 @@ const ArticleGrid = ({ articles, heading, max }) => {
 
 ArticleGrid.defaultProps = {
   heading: `Blog`,
-  max: null
+  max: null,
 };
 
 ArticleGrid.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   heading: PropTypes.string,
-  max: PropTypes.number
+  max: PropTypes.number,
 };
 
 export default ArticleGrid;

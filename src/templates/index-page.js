@@ -5,6 +5,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { graphql } from "gatsby";
 import { DocumentContext } from "~context/DocumentContext";
 import Card from "~components/Card";
+import Footer from "~components/Footer";
 import Layout from "~components/Layout";
 import SEO from "~components/SEO";
 import Header from "~components/Header";
@@ -78,20 +79,7 @@ const IndexPage = ({ data, location }) => {
           ))}
         </ul>
 
-        <footer className="grid pt-32 pb-16 b2">
-          <a
-            href="https://www.linkedin.com/in/wil-j-88b232120/"
-            target="_blank"
-            rel="noreferrer"
-            className="grid-start-2 grid-end-10 flex justify-end mb-2"
-          >
-            linkedin
-          </a>
-
-          <p className="grid-start-2 grid-end-10 flex justify-end">
-            william.cd.johnston at gmail
-          </p>
-        </footer>
+        <Footer />
       </Layout>
     </>
   );
